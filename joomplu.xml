@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content" method="upgrade">
+  <name>PLG_JOOMPLU</name>
+  <author>JoomGallery::ProjectTeam</author>
+  <creationDate>20.06.2013</creationDate>
+  <copyright>Copyright (C) 2011 - 2013 Open Source Matters. All rights reserved.</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <authorEmail>team@joomgallery.net</authorEmail>
+  <authorUrl>www.joomgallery.net</authorUrl>
+  <version>3.1</version>
+  <description>PLG_JOOMPLU_DESC</description>
+  <files>
+    <filename plugin="joomplu">joomplu.php</filename>
+    <filename>index.html</filename>
+  </files>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.plg_content_joomplu.ini</language>
+    <language tag="en-GB">en-GB/en-GB.plg_content_joomplu.sys.ini</language>
+    <language tag="de-DE">de-DE/de-DE.plg_content_joomplu.ini</language>
+    <language tag="de-DE">de-DE/de-DE.plg_content_joomplu.sys.ini</language>
+  </languages>
+  <config>
+    <fields name="params" addfieldpath="administrator/components/com_joomgallery/models/fields">
+      <fieldset name="basic">
+        <field name="openimage" type="openimage" default="default" label="PLG_JOOMPLU_FIELD_OPENIMAGE" description="PLG_JOOMPLU_FIELD_OPENIMAGE_DESCRIPTION" prefix="PLG_JOOMPLU_FIELD_OPENIMAGE_">
+          <option value="default">PLG_JOOMPLU_FIELD_OPENIMAGE_LIKE_IN_JOOMGALLERY</option>
+        </field>
+        <field type="spacer" hr="true" />
+        <field name="upload_enabled" type="radio" default="1" label="PLG_JOOMPLU_FIELD_UPLOAD_ENABLED" description="PLG_JOOMPLU_FIELD_UPLOAD_ENABLED_DESCRIPTION" class="btn-group">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field name="upload_catids" type="text" default="" label="PLG_JOOMPLU_FIELD_UPLOAD_CATEGORIES" description="PLG_JOOMPLU_FIELD_UPLOAD_CATEGORIES_DESCRIPTION" />
+        <field name="create_category" type="radio" default="1" label="PLG_JOOMPLU_FIELD_CREATE_CATEGORY" description="PLG_JOOMPLU_FIELD_CREATE_CATEGORY_DESCRIPTION" class="btn-group">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field name="parent_catids" type="text" default="" label="PLG_JOOMPLU_FIELD_PARENT_CATEGORIES" description="PLG_JOOMPLU_FIELD_PARENT_CATEGORIES_DESCRIPTION" />
+        <field type="spacer" hr="true" />
+        <field name="showhidden" type="radio" default="1" label="PLG_JOOMPLU_FIELD_SHOW_HIDDEN" description="PLG_JOOMPLU_FIELD_SHOW_HIDDEN_DESCRIPTION" class="btn-group">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field type="spacer" hr="true" />
+        <field name="use_gallery_styles" type="radio" default="0" label="PLG_JOOMPLU_FIELD_USE_GALLERY_STYLES" description="PLG_JOOMPLU_FIELD_USE_GALLERY_STYLES_DESCRIPTION" class="btn-group">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field type="spacer" hr="true" />
+        <field name="msg" type="radio" default="1" label="PLG_JOOMPLU_FIELD_MSG" description="PLG_JOOMPLU_FIELD_MSG_DESCRIPTION" class="btn-group">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field name="msg_to" type="text" default="" label="PLG_JOOMPLU_FIELD_MSG_TO" description="PLG_JOOMPLU_FIELD_MSG_TO_DESCRIPTION" />
+      </fieldset>
+      <fieldset name="advanced">
+        <field type="spacer" label="PLG_JOOMPLU_FIELD_DEFAULT_DESCRIPTION" />
+        <field name="default_type" type="list" default="thumb" label="PLG_JOOMPLU_FIELD_DEFAULT_TYPE" description="PLG_JOOMPLU_FIELD_DEFAULT_TYPE_DESCRIPTION">
+          <option value="thumb">PLG_JOOMPLU_FIELD_THUMBNAIL</option>
+          <option value="img">PLG_JOOMPLU_FIELD_DETAIL</option>
+          <option value="orig">PLG_JOOMPLU_FIELD_ORIGINAL</option>
+        </field>
+        <field name="default_linked" type="list" default="1" label="PLG_JOOMPLU_FIELD_DEFAULT_LINKED" description="PLG_JOOMPLU_FIELD_DEFAULT_LINKED_DESCRIPTION">
+          <option value="0">JNO</option>
+          <option value="1">PLG_JOOMPLU_FIELD_DETAIL_VIEW</option>
+          <option value="2">PLG_JOOMPLU_FIELD_CATEGORY_VIEW</option>
+        </field>
+        <field name="default_linked_type" type="list" default="img" label="PLG_JOOMPLU_FIELD_DEFAULT_LINKED_TYPE" description="PLG_JOOMPLU_FIELD_DEFAULT_LINKED_TYPE_DESCRIPTION">
+          <option value="img">PLG_JOOMPLU_FIELD_DETAIL</option>
+          <option value="orig">PLG_JOOMPLU_FIELD_ORIGINAL</option>
+        </field>
+        <field name="default_alttext" type="text" default="" label="PLG_JOOMPLU_FIELD_DEFAULT_ALTTEXT" description="PLG_JOOMPLU_FIELD_DEFAULT_ALTTEXT_DESCRIPTION" />
+        <field name="default_class" type="text" default="" label="PLG_JOOMPLU_FIELD_DEFAULT_CLASS" description="PLG_JOOMPLU_FIELD_DEFAULT_CLASS_DESCRIPTION" />
+        <field name="default_linkedtext" type="text" default="" label="PLG_JOOMPLU_FIELD_DEFAULT_LINKEDTEXT" description="PLG_JOOMPLU_FIELD_DEFAULT_LINKEDTEXT_DESCRIPTION" />
+        <field type="spacer" hr="true" />
+        <field name="default_category_mode" type="radio" default="0" label="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_MODE" description="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_MODE_DESCRIPTION" class="btn-group">
+          <option value="0">PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_MODE_THUMBNAILS</option>
+          <option value="1">PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_MODE_TEXTLINK</option>
+        </field>
+        <field name="default_category_limit" type="text" default="4" label="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_LIMIT" description="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_LIMIT_DESCRIPTION" />
+        <field name="default_category_columns" type="text" default="2" label="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_COLUMNS" description="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_COLUMNS_DESCRIPTION" />
+        <field name="default_category_ordering" type="list" default="0" label="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_ORDERING" description="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_ORDERING_DESCRIPTION">
+          <option value="0">PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_ORDERING_ORDERING</option>
+          <option value="1">PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_ORDERING_RANDOM</option>
+        </field>
+        <field name="default_category_linkedtext" type="text" default="" label="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_LINKEDTEXT" description="PLG_JOOMPLU_FIELD_DEFAULT_CATEGORY_LINKEDTEXT_DESCRIPTION" />
+        <field type="spacer" hr="true" />
+        <field name="additional_settings" type="textarea" rows="6" cols="20" default="" label="PLG_JOOMPLU_FIELD_ADDITIONAL_SETTINGS" description="PLG_JOOMPLU_FIELD_ADDITIONAL_SETTINGS_DESCRIPTION" />
+      </fieldset>
+    </fields>
+  </config>
+  <updateservers>
+    <server type="collection" priority="1" name="JoomGallery Update Service">http://www.en.joomgallery.net/components/com_newversion/xml/extensions3.xml</server>
+  </updateservers>
+</extension>
