@@ -94,7 +94,11 @@ class plgContentJoomPlu extends JPlugin
     }
 
     // Set default column number for displaying categories
-    $this->_interface->addConfig('default_columns', $this->params->get('default_columns'));
+    if(!$columnNumber = $this->params->get('default_category_columns'))
+    {
+      $columnNumber = $this->_interface->getJConfig('jg_colnumb');
+    }
+    $this->_interface->addConfig('default_columns', $columnNumber);
 
     // Do we want to display hidden images and categories also?
     $this->_interface->addConfig('showhidden', $this->params->get('showhidden'));
