@@ -318,7 +318,7 @@ class plgContentJoomPlu extends JPlugin
             break;
         }
 
-        $rows   = $this->_interface->getPicsByCategory($match[1], $user->get('aid'), $ordering, $this->_interface->getConfig('limit'));
+        $rows   = $this->_interface->getPicsByCategory($match[1], $user->get('aid'), $ordering, $this->_interface->getConfig('limit'), $this->_interface->getConfig('limitstart'));
         $output = $this->_interface->displayThumbs($rows);
 
         $this->_interface->resetConfig();
