@@ -37,7 +37,7 @@ class plgContentJoomPlu extends JPlugin
    * @return  void
    * @since   1.5.0
    */
-  public function plgContentJoomPlu(&$subject, $params)
+  public function __construct($subject, $params)
   {
     parent::__construct($subject, $params);
 
