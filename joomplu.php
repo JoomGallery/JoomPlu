@@ -319,7 +319,7 @@ class plgContentJoomPlu extends JPlugin
         }
 
         $loadAll       = $this->params->get('default_category_load_all', 0);
-        if($this->_interface->getConfig('category_load_all'))
+        if($this->_interface->getConfig('category_load_all') !== false)
         {
           $loadAll     = $this->_interface->getConfig('category_load_all');
         }
