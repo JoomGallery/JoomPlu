@@ -313,6 +313,27 @@ class plgContentJoomPlu extends JPlugin
           case 'random':
             $ordering = 'RAND()';
             break;
+          case 'id':
+          case 'id asc':
+            $ordering = 'jg.id asc';
+            break;
+          case 'id desc':
+            $ordering = 'jg.id desc';
+            break;
+          case 'imgtitle':
+          case 'imgtitle asc':
+            $ordering = 'jg.imgtitle asc';
+            break;
+          case 'imgtitle desc':
+            $ordering = 'jg.imgtitle desc';
+            break;
+          case 'ordering':
+          case 'ordering asc':
+            $ordering = 'jg.ordering asc';
+            break;
+          case 'ordering desc':
+            $ordering = 'jg.ordering desc';
+            break;
           default:
             $ordering = 'jg.ordering';
             break;
