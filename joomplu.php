@@ -307,7 +307,7 @@ class plgContentJoomPlu extends JPlugin
       {
         $this->_setConfig($match[2]);
 
-        $ordering = $this->_interface->getConfig('ordering');
+        $ordering = strtolower($this->_interface->getConfig('ordering'));
         switch($ordering)
         {
           case 'random':
@@ -326,6 +326,55 @@ class plgContentJoomPlu extends JPlugin
             break;
           case 'imgtitle desc':
             $ordering = 'jg.imgtitle desc';
+            break;
+          case 'imgfilename':
+          case 'imgfilename asc':
+            $ordering = 'jg.imgfilename asc';
+            break;
+          case 'imgfilename desc':
+            $ordering = 'jg.imgfilename desc';
+            break;
+          case 'imgdate':
+          case 'imgdate asc':
+            $ordering = 'jg.imgdate asc';
+            break;
+          case 'imgdate desc':
+            $ordering = 'jg.imgdate desc';
+            break;
+          case 'hits':
+          case 'hits asc':
+            $ordering = 'jg.hits asc';
+            break;
+          case 'hits desc':
+            $ordering = 'jg.hits desc';
+            break;
+          case 'rating':
+          case 'rating asc':
+            $ordering = 'jg.imgvotesum asc';
+            break;
+          case 'rating desc':
+            $ordering = 'jg.imgvotesum desc';
+            break;
+          case 'imgvotes':
+          case 'imgvotes asc':
+            $ordering = 'jg.imgvotes asc';
+            break;
+          case 'imgvotes desc':
+            $ordering = 'jg.imgvotes desc';
+            break;
+          case 'downloads':
+          case 'downloads asc':
+            $ordering = 'jg.downloads asc';
+            break;
+          case 'downloads desc':
+            $ordering = 'jg.downloads desc';
+            break;
+          case 'imgauthor':
+          case 'imgauthor asc':
+            $ordering = 'jg.imgauthor asc';
+            break;
+          case 'imgauthor desc':
+            $ordering = 'jg.imgauthor desc';
             break;
           case 'ordering':
           case 'ordering asc':
