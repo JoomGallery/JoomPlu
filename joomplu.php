@@ -350,10 +350,10 @@ class plgContentJoomPlu extends JPlugin
             break;
           case 'rating':
           case 'rating asc':
-            $ordering = 'jg.imgvotesum asc';
+            $ordering = 'rating asc';
             break;
           case 'rating desc':
-            $ordering = 'jg.imgvotesum desc';
+            $ordering = 'rating desc';
             break;
           case 'imgvotes':
           case 'imgvotes asc':
