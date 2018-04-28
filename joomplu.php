@@ -110,7 +110,7 @@ class plgContentJoomPlu extends JPlugin
     $this->_interface->storeConfig();
 
     // Regular expressions
-    $regex_img  = '/href="joomplu:([0-9]+)([a-z,A-Z,0-9,%,=,|, ]*)"/';
+    $regex_img  = '/href="joomplu:([0-9]+)([a-z,A-Z,0-9,%,=,|, ,-]*)"/';
     $regex_alt  = '/alt="joomplu:([0-9]+)([a-z, ]*)"/';
     $regex_tag  = '/{joomplu:([0-9]+)(.*?)}/';
     $regex_cat  = '/{joomplucat:([0-9]+)(.*)}/';//([a-z,=,",|, ]*)
