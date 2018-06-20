@@ -318,8 +318,29 @@ class plgContentJoomPlu extends JPlugin
             break;
         }
 
-        $rows   = $this->_interface->getPicsByCategory($match[1], $user->get('aid'), $ordering, $this->_interface->getConfig('limit'), $this->_interface->getConfig('limitstart'));
-        $output = $this->_interface->displayThumbs($rows);
+        $loadAll       = $this->params->get('default_category_load_all', 0);
+        if($this->_interface->getConfig('category_load_all') !== false)
+        {
+          $loadAll     = $this->_interface->getConfig('category_load_all');
+        }
+        $tmpLimit      = $loadAll ? 0 : $this->_interface->getConfig('limit');
+        $tmpLimitstart = $loadAll ? 0 : $this->_interface->getConfig('limitstart');
+        $rows          = $this->_interface->getPicsByCategory($match[1], $user->get('aid'), $ordering, $tmpLimit, $tmpLimitstart);
+        $output        = $this->_interface->displayThumbs($rows);
+
+        if($loadAll)
+        {
+          $output = preg_replace('/"jg_row /', '"jg_row hidden ', $output);
+
+          if(!$columnCount = $this->_interface->getConfig('columns'))
+          {
+            $columnCount = $this->_interface->getConfig('default_columns');
+          }
+
+          $rowsNotHidden = $columnCount > 0 ? intval($this->_interface->getConfig('limit') / $columnCount) : 1;
+
+          $output = preg_replace('/"jg_row hidden /', '"jg_row ', $output, $rowsNotHidden > 0 ? $rowsNotHidden : 1);
+        }
 
         $this->_interface->resetConfig();
 
