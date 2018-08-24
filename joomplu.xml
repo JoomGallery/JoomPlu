@@ -55,17 +55,23 @@
       </fieldset>
       <fieldset name="advanced">
         <field type="spacer" label="PLG_JOOMPLU_FIELD_DEFAULT_DESCRIPTION" />
-        <field name="default_type" type="list" default="thumb" label="PLG_JOOMPLU_FIELD_DEFAULT_TYPE" description="PLG_JOOMPLU_FIELD_DEFAULT_TYPE_DESCRIPTION">
+        <field name="default_type" type="radio" default="thumb" label="PLG_JOOMPLU_FIELD_DEFAULT_TYPE" description="PLG_JOOMPLU_FIELD_DEFAULT_TYPE_DESCRIPTION" class="btn-group">
           <option value="thumb">PLG_JOOMPLU_FIELD_THUMBNAIL</option>
           <option value="img">PLG_JOOMPLU_FIELD_DETAIL</option>
           <option value="orig">PLG_JOOMPLU_FIELD_ORIGINAL</option>
         </field>
-        <field name="default_linked" type="list" default="1" label="PLG_JOOMPLU_FIELD_DEFAULT_LINKED" description="PLG_JOOMPLU_FIELD_DEFAULT_LINKED_DESCRIPTION">
+        <field name="default_position" type="radio" default="" label="PLG_JOOMPLU_FIELD_DEFAULT_ALIGNMENT" description="PLG_JOOMPLU_FIELD_DEFAULT_ALIGNMENT_DESCRIPTION" class="btn-group">
+          <option value="">PLG_JOOMPLU_FIELD_ALIGNMENT_NONE</option>
+          <option value="center">PLG_JOOMPLU_FIELD_ALIGNMENT_CENTER</option>
+          <option value="left">PLG_JOOMPLU_FIELD_ALIGNMENT_LEFT</option>
+          <option value="right">PLG_JOOMPLU_FIELD_ALIGNMENT_RIGHT</option>
+        </field>
+        <field name="default_linked" type="radio" default="1" label="PLG_JOOMPLU_FIELD_DEFAULT_LINKED" description="PLG_JOOMPLU_FIELD_DEFAULT_LINKED_DESCRIPTION" class="btn-group">
           <option value="0">JNO</option>
           <option value="1">PLG_JOOMPLU_FIELD_DETAIL_VIEW</option>
           <option value="2">PLG_JOOMPLU_FIELD_CATEGORY_VIEW</option>
         </field>
-        <field name="default_linked_type" type="list" default="img" label="PLG_JOOMPLU_FIELD_DEFAULT_LINKED_TYPE" description="PLG_JOOMPLU_FIELD_DEFAULT_LINKED_TYPE_DESCRIPTION">
+        <field name="default_linked_type" type="radio" default="img" label="PLG_JOOMPLU_FIELD_DEFAULT_LINKED_TYPE" description="PLG_JOOMPLU_FIELD_DEFAULT_LINKED_TYPE_DESCRIPTION" class="btn-group">
           <option value="img">PLG_JOOMPLU_FIELD_DETAIL</option>
           <option value="orig">PLG_JOOMPLU_FIELD_ORIGINAL</option>
         </field>
